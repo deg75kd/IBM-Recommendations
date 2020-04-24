@@ -16048,7 +16048,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get articles that overlap train and test data sets</span>
@@ -16062,7 +16062,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># only keep articles in train set that overlap test set</span>
@@ -16081,7 +16081,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -16098,7 +16098,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># fit SVD on the user_item_train matrix</span>
@@ -16116,7 +16116,7 @@ The top 10 recommendations for user 20 are the following article names:
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[50]:</div>
+    <div class="prompt output_prompt">Out[49]:</div>
 
 
 
@@ -16133,7 +16133,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use these cells to see how well you can use the training </span>
@@ -16265,6 +16265,8 @@ The top 10 recommendations for user 20 are the following article names:
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>This test shows the opposite effect of the previous one.  In the first test the accuracy improved with additional latent features.  In this one the accuracy drops as we add more features.  I believe the biggest issue here is that the train and test matrices ended up with a different number of articles.  In order to get this to work I had to drop the articles from the training matrix that are not in the test set.</strong></p>
+<p><strong>One way we could test the effectiveness is to use A/B Testing.  Since this is a web site, we could roll out versions with different recommendation models.  The current web site would be set as the control.  For the expiremental group we would build a model using a specific number of latent features and use it to provide recommendations for those users.  By measuring the number of interactions based on these recommendations, we can determine if we see a large enough increase to roll out the new model across the board.</strong></p>
+<p><strong>We could also use A/B/C Testing if we wanted to test using different numbers of latent features.  In this scenario we would decide on two models with different numbers of latent features and compare them to the control group.  The viability of this would depend on the amount of traffic through the web site.  Bigger experimentation groups will give us greater confidence in our results.  Thus we might need to run an A/B/C test longer than we want to get the desired number of experiments.</strong></p>
 
 </div>
 </div>
@@ -16287,7 +16289,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">call</span>
@@ -16295,6 +16297,26 @@ The top 10 recommendations for user 20 are the following article names:
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[53]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
